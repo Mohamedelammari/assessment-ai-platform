@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta
+      name="description"
+      content="Enterprise AI-powered assessment and recruitment platform"
+    />
+
+    <title>AssessmentAI Platform</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for opacity backgrounds -->
+    <style>
+      .bg-white\/90 {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+      }
+      .bg-white\/95 {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+      }
+      .border-gray-200\/50 {
+        border-color: rgba(229, 231, 235, 0.5) !important;
+      }
+      .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      /* Loading animation */
+      .loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loaded .loading-spinner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Loading spinner -->
+    <div class="loading-spinner" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- React app root -->
+    <div id="root"></div>
+
+    <script>
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>
